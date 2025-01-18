@@ -10,6 +10,6 @@ return {
 
 				indent = { enable = true },
 			})
-		end
-	}
+		end,
+	},
 }

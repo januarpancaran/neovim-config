@@ -1,18 +1,18 @@
 return {
 	{
-    "williamboman/mason.nvim",
+		"williamboman/mason.nvim",
 		config = function()
 			require("mason").setup()
-		end
+		end,
 	},
 
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				automatic_installation = true
+				automatic_installation = true,
 			})
-		end
+		end,
 	},
 
 	{
@@ -39,6 +39,6 @@ return {
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-		end
-	}
+		end,
+	},
 }

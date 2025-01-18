@@ -51,18 +51,18 @@ return {
 
 				-- Cpp
 				require("none-ls.diagnostics.cpplint").with({
-					args = { "--filter=-whitespace,-legal/copyright" }
+					args = { "--filter=-whitespace,-legal/copyright" },
 				}),
 				null_ls.builtins.formatting.clang_format.with({
-					extra_args = { "--style=file" }
+					extra_args = { "--style=file" },
 				}),
 
 				--Python
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
-			}
+			},
 		})
 
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-	end
+	end,
 }
