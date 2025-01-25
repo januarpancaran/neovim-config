@@ -48,6 +48,8 @@ return {
 				-- Golang
 				null_ls.builtins.diagnostics.staticcheck,
 				null_ls.builtins.formatting.asmfmt,
+        null_ls.builtins.diagnostics.golangci_lint,
+        null_ls.builtins.formatting.golines,
 
 				-- Cpp
 				require("none-ls.diagnostics.cpplint").with({
