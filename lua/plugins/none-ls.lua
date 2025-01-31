@@ -1,70 +1,70 @@
 return {
-	"nvimtools/none-ls.nvim",
-	dependencies = { "nvimtools/none-ls-extras.nvim" },
-	config = function()
-		local null_ls = require("null-ls")
+  "nvimtools/none-ls.nvim",
+  dependencies = { "nvimtools/none-ls-extras.nvim" },
+  config = function()
+    local null_ls = require("null-ls")
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-		null_ls.setup({
-			sources = {
-				-- Bash
-				null_ls.builtins.formatting.shfmt,
+    null_ls.setup({
+      on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({ async = false })
+            end,
+          })
+        end
+      end,
 
-				-- Lua
-				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.completion.spell,
+      sources = {
+        -- Bash
+        null_ls.builtins.formatting.shfmt,
 
-				-- JS and TS
-				require("none-ls.diagnostics.eslint_d"),
-				require("none-ls.code_actions.eslint_d"),
-				require("none-ls.formatting.eslint_d"),
-				require("none-ls.formatting.beautysh"),
-				require("none-ls.formatting.jq"),
+        -- Lua
+        null_ls.builtins.completion.luasnip,
+        null_ls.builtins.formatting.stylua,
 
-				null_ls.builtins.formatting.prettierd.with({
-					filetypes = {
-						"javascript",
-						"javascriptreact",
-						"typescript",
-						"typescriptreact",
-						"vue",
-						"css",
-						"scss",
-						"less",
-						"html",
-						"json",
-						"jsonc",
-						"yaml",
-						"markdown",
-						"markdown.mdx",
-						"graphql",
-						"handlebars",
-					},
-					extra_filetypes = { "toml", "svelte" },
-				}),
+        -- Javascript
+        require("none-ls.diagnostics.eslint_d"),
+        require("none-ls.code_actions.eslint_d"),
+        require("none-ls.formatting.eslint_d"),
+        null_ls.builtins.formatting.prettierd,
 
-				-- Css
-				null_ls.builtins.diagnostics.stylelint,
+        -- Css
+        null_ls.builtins.diagnostics.stylelint,
 
-				-- Golang
-				null_ls.builtins.diagnostics.staticcheck,
-				null_ls.builtins.formatting.asmfmt,
+        -- Markdown
+        null_ls.builtins.diagnostics.markdownlint_cli2,
+
+        -- Golang
+        null_ls.builtins.formatting.asmfmt,
         null_ls.builtins.diagnostics.golangci_lint,
         null_ls.builtins.formatting.golines,
+        null_ls.builtins.formatting.gofumpt,
+        null_ls.builtins.diagnostics.staticcheck,
 
-				-- Cpp
-				require("none-ls.diagnostics.cpplint").with({
-					args = { "--filter=-whitespace,-legal/copyright" }
-				}),
-				null_ls.builtins.formatting.clang_format.with({
-					extra_args = { "--style=file" }
-				}),
+        -- Cpp
+        require("none-ls.diagnostics.cpplint").with({
+          args = { "--filter=-whitespace,-legal/copyright" },
+        }),
+        null_ls.builtins.formatting.clang_format,
 
-				--Python
-				null_ls.builtins.formatting.black,
-				null_ls.builtins.formatting.isort,
-			}
-		})
+        -- Python
+        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.isort,
 
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-	end
+        -- Java
+        null_ls.builtins.formatting.google_java_format,
+        null_ls.builtins.diagnostics.checkstyle.with({
+          extra_args = { "-c", "/google_checks.xml" },
+        }),
+      },
+
+      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {}),
+    })
+  end,
 }

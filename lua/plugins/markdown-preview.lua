@@ -8,6 +8,6 @@ return {
 		end,
 		ft = { "markdown" },
 
-		vim.keymap.set("n", "<C-m>", ":MarkdownPreview<CR>", {}),
+		vim.keymap.set("n", "<C-m>", "<CMD>MarkdownPreview<CR>", {}),
 	},
 }
