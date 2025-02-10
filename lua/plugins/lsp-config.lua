@@ -14,6 +14,7 @@ return {
           "bashls",
           "clangd",
           "cssls",
+          "docker_compose_language_service",
           "eslint",
           "gopls",
           "html",
@@ -26,6 +27,7 @@ return {
           "sqls",
           "svelte",
           "tailwindcss",
+          "texlab",
           "ts_ls",
           "volar",
         },
@@ -42,6 +44,7 @@ return {
       lspconfig.bashls.setup({ capabilities = capabilities })
       lspconfig.clangd.setup({ capabilities = capabilities })
       lspconfig.cssls.setup({ capabilities = capabilities })
+      lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.gopls.setup({ capabilities = capabilities })
       lspconfig.html.setup({ capabilities = capabilities })
@@ -54,6 +57,7 @@ return {
       lspconfig.sqls.setup({ capabilities = capabilities })
       lspconfig.svelte.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig.texlab.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
       lspconfig.volar.setup({ capabilities = capabilities })
 
