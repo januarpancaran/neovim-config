@@ -23,6 +23,7 @@ return {
           "jsonls",
           "lua_ls",
           "marksman",
+          "matlab_ls",
           "pyright",
           "rust_analyzer",
           "sqls",
@@ -54,6 +55,7 @@ return {
       lspconfig.jsonls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.marksman.setup({ capabilities = capabilities })
+      lspconfig.matlab_ls.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       lspconfig.sqls.setup({ capabilities = capabilities })

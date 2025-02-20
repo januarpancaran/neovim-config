@@ -1,23 +1,34 @@
+-- line numbers
 vim.o.number = true
 vim.o.relativenumber = true
-
-vim.o.scrolloff = 10
 vim.o.signcolumn = "yes"
 
+-- scroll
+vim.o.scrolloff = 10
+vim.o.wrap = true
+
+-- tab
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
+-- indent
 vim.o.smartindent = true
 vim.o.autoindent = true
 
+-- search
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
-vim.o.updatetime = 300
-vim.o.termguicolors = true
-
+-- undo
 vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
 
+-- others
+vim.o.updatetime = 50
+vim.o.termguicolors = true
+vim.o.guicursor = ""
 vim.o.clipboard = "unnamedplus"
