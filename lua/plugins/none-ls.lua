@@ -65,9 +65,6 @@ return {
 
         -- Docker
         null_ls.builtins.diagnostics.hadolint,
-
-        -- Latex
-        null_ls.builtins.diagnostics.textidote,
       },
 
       vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {}),
