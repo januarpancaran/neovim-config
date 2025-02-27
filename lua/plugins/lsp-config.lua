@@ -16,7 +16,6 @@ return {
           "cssls",
           "docker_compose_language_service",
           "dockerls",
-          "eslint",
           "gopls",
           "html",
           "jdtls",
@@ -48,7 +47,6 @@ return {
       lspconfig.cssls.setup({ capabilities = capabilities })
       lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
       lspconfig.dockerls.setup({ capabilities = capabilities })
-      lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.gopls.setup({ capabilities = capabilities })
       lspconfig.html.setup({ capabilities = capabilities })
       lspconfig.jdtls.setup({ capabilities = capabilities })
