@@ -30,7 +30,7 @@ return {
           "tailwindcss",
           "texlab",
           "ts_ls",
-          "volar",
+          "vue_ls",
         },
       })
     end,
