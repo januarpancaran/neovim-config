@@ -23,7 +23,7 @@ return {
           "lua_ls",
           "marksman",
           "matlab_ls",
-          "pyright",
+          "ruff",
           "rust_analyzer",
           "sqls",
           "svelte",
@@ -54,14 +54,14 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.marksman.setup({ capabilities = capabilities })
       lspconfig.matlab_ls.setup({ capabilities = capabilities })
-      lspconfig.pyright.setup({ capabilities = capabilities })
+      lspconfig.ruff.setup({ capabilities = capabilities })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       lspconfig.sqls.setup({ capabilities = capabilities })
       lspconfig.svelte.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.texlab.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
-      lspconfig.volar.setup({ capabilities = capabilities })
+      lspconfig.vue_ls.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
