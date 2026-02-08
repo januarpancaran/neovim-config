@@ -9,7 +9,6 @@ return {
 		local servers = {
 			"bashls",
 			"clangd",
-			"cmake",
 			"cssls",
 			"gopls",
 			"html",
