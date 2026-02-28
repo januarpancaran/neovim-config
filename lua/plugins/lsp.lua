@@ -15,6 +15,7 @@ return {
 			"intelephense",
 			"jdtls",
 			"jsonls",
+			"lemminx",
 			"lua_ls",
 			"marksman",
 			"omnisharp",

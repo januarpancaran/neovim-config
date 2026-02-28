@@ -51,6 +51,9 @@ return {
 
 				-- rust
 				require("none-ls.formatting.rustfmt"),
+
+				-- xml
+				null_ls.builtins.formatting.xmllint,
 			},
 
 			on_attach = on_attach,
