@@ -11,7 +11,8 @@ vim.keymap.set("n", "<C-j>", "wincmd j<CR>")
 vim.keymap.set("n", "<C-k>", "wincmd k<CR>")
 vim.keymap.set("n", "<C-l>", "wincmd l<CR>")
 
-vim.keymap.set("n", "<leader>pp", "<CMD>Ex<CR>")
+-- oil
+vim.keymap.set("n", "<leader>pp", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- lsp
 if not vim.g.vscode then
