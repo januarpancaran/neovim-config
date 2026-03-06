@@ -12,7 +12,9 @@ vim.keymap.set("n", "<C-k>", "wincmd k<CR>")
 vim.keymap.set("n", "<C-l>", "wincmd l<CR>")
 
 -- oil
-vim.keymap.set("n", "<leader>pp", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+if not vim.g.vscode then
+	vim.keymap.set("n", "<leader>pp", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+end
 
 -- lsp
 if not vim.g.vscode then
@@ -26,6 +28,8 @@ end
 
 -- telescope
 if not vim.g.vscode then
-	vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Telescope find files" })
+	vim.keymap.set("n", "<leader>ff", function()
+		require("telescope.builtin").find_files({ hidden = true })
+	end, { desc = "Telescope find files" })
 	vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Telescope live grep" })
 end
