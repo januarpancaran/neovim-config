@@ -28,7 +28,11 @@ vim.o.incsearch = true
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.undofile = true
-vim.o.undodir = (os.getenv("HOME") or os.getenv("USERPROFILE")) .. "/.vim/undodir"
+if vim.fn.has("win32") == 1 then
+	vim.o.undodir = os.getenv("USERPROFILE") .. "/vimfiles/undodir"
+else
+	vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+end
 
 -- others
 vim.o.updatetime = 50
