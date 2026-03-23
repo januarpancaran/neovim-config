@@ -20,6 +20,7 @@ return {
 			"marksman",
 			"omnisharp",
 			"pyright",
+			"ruby_lsp",
 			"rust_analyzer",
 			"svelte",
 			"tailwindcss",

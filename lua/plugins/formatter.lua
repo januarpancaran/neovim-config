@@ -49,6 +49,9 @@ return {
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
 
+				-- ruby
+				null_ls.builtins.formatting.rubocop,
+
 				-- rust
 				require("none-ls.formatting.rustfmt"),
 
