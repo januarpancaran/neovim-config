@@ -21,6 +21,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins.languages" },
     { import = "plugins.dap" },
+    { import = "plugins.treesitter-context" },
     { import = "plugins" },
   },
   defaults = {
