@@ -1,6 +1,8 @@
-if not vim.g.vscode then
-	require("config.lazy")
-end
+vim.g.mapleader = " "
 
 require("config.options")
-require("config.mappings")
+require("config.keymaps")
+
+if not vim.g.vscode then
+  require("config.lazy")
+end

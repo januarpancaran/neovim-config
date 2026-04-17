@@ -1,6 +1,3 @@
--- leader
-vim.g.mapleader = " "
-
 -- line numbers
 vim.o.number = true
 vim.o.relativenumber = true
@@ -29,9 +26,9 @@ vim.o.swapfile = false
 vim.o.backup = false
 vim.o.undofile = true
 if vim.fn.has("win32") == 1 then
-	vim.o.undodir = os.getenv("USERPROFILE") .. "/vimfiles/undodir"
+  vim.o.undodir = os.getenv("USERPROFILE") .. "/vimfiles/undodir"
 else
-	vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+  vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 end
 
 -- others
@@ -40,9 +37,9 @@ vim.o.termguicolors = true
 vim.o.guicursor = "a:block"
 vim.o.clipboard = "unnamedplus"
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = true,
-	severity_sort = true,
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = true,
 })
